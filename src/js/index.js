@@ -29,16 +29,20 @@ function onInputChange(event) {
 function renderCountryCard(country) {
     console.log(country);
     if (country.length > 10) {
-        console.log('sg')
+        rfs.countryCard.innerHTML = '';
+        alert({
+        text: 'Enter a more specific country name',
+        delay: 3000}
+        );
     } else if (country.length > 1 && country.length < 10 ) {
         rfs.countryCard.innerHTML = countryList(country);
     } else {
         rfs.countryCard.innerHTML = countryCard(...country);
-
     }
 }
 
 function onFetchError() {
+    rfs.countryCard.innerHTML = '';
     alert({
     type: 'error',
     text: 'We could not find a country that matched your query. Please try to enter the correct name',
