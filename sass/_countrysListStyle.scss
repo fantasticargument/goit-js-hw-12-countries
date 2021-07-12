@@ -2,8 +2,13 @@
   display: flex;
   margin-bottom: 10px;
   font-size: 40px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 3px;
+  justify-content: center;
+  padding: 10px;
 }
 
 .flag-img {
   margin-right: 10px;
+  align-items: center;
 }

@@ -1,5 +1,24 @@
-.item-card {
+.name-coantry {
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 3px;
   display: flex;
+  justify-content: center;
+}
+
+.item-card {
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 3px;
+  display: flex;
+  justify-content: center;
   margin-bottom: 10px;
   font-size: 20px;
+}
+
+.flag-img {
+  display: flex;
+  justify-content: center;
+}
+
+ul {
+  padding-left: 0;
 }
