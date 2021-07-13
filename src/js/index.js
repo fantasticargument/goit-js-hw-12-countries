@@ -15,7 +15,7 @@ const rfs = {
 
 var debounce = require('lodash.debounce');
 
-rfs.searchCountry.addEventListener('input', debounce(onInputChange, 3000));
+rfs.searchCountry.addEventListener('input', debounce(onInputChange, 500));
 
 function onInputChange(event) {
     const request = event.target.value;
@@ -23,7 +23,7 @@ function onInputChange(event) {
     API.fetchCountry(request)
         .then(renderCountryCard)
         .catch(onFetchError)
-        .finally(onFinallyClear)
+        // .finally(onFinallyClear)
 }
 
 function renderCountryCard(country) {
@@ -50,6 +50,6 @@ function onFetchError() {
 );
 }
 
-function onFinallyClear() {
-    rfs.searchCountry.value= ''
-}
+// function onFinallyClear() {
+//     rfs.searchCountry.value= ''
+// }
