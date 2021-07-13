@@ -7,6 +7,7 @@ import '@pnotify/mobile/dist/PNotifyMobile.css';
 import { alert, defaultModules } from '@pnotify/core';
 import * as PNotifyMobile from '@pnotify/mobile';
 defaultModules.set(PNotifyMobile, {});
+const eve = new Event('input')
 
 const rfs = {
     searchCountry: document.querySelector('.js-input-country'),
@@ -36,6 +37,7 @@ function renderCountryCard(country) {
         );
     } else if (country.length > 1 && country.length < 10 ) {
         rfs.countryCard.innerHTML = countryList(country);
+        rfs.countryCard.addEventListener('click', choosCountry)
     } else {
         rfs.countryCard.innerHTML = countryCard(...country);
     }
@@ -50,6 +52,11 @@ function onFetchError() {
 );
 }
 
+function choosCountry(choosCountryName) {
+    rfs.searchCountry.value = '';
+    rfs.searchCountry.value = choosCountryName.target.textContent.trim();
+    rfs.searchCountry.dispatchEvent(eve)
+}
 // function onFinallyClear() {
 //     rfs.searchCountry.value= ''
 // }
